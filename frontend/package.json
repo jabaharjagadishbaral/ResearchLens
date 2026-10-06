@@ -1,0 +1,9 @@
+{
+  "name": "researchmind-web", "version": "0.1.0", "private": true,
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start",
+    "typecheck": "tsc --noEmit", "test": "node --test lib/lib.test.ts" },
+  "dependencies": { "next": "14.2.15", "react": "18.3.1", "react-dom": "18.3.1",
+    "@tanstack/react-query": "^5.59.0", "react-markdown": "^9.0.1", "remark-math": "^6.0.0",
+    "rehype-katex": "^7.0.1", "katex": "^0.16.11" },
+  "devDependencies": { "typescript": "^5.6.0", "@types/node": "^22.0.0", "@types/react": "^18.3.0", "@types/react-dom": "^18.3.0" }
+}

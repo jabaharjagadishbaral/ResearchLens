@@ -1,0 +1,3 @@
+{ "compilerOptions": { "strict": true, "noEmit": true, "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler",
+  "allowImportingTsExtensions": true, "lib": ["ES2022", "DOM", "DOM.Iterable"], "skipLibCheck": true, "types": [] },
+  "include": ["lib/types.ts", "lib/sse.ts", "lib/citations.ts", "lib/graph.ts", "lib/api.ts"] }

@@ -1,0 +1,17 @@
+:root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --line:#e7e5e4; --card:#fff; --accent:#1d4ed8; --ok:#15803d; --warn:#b45309; --bad:#b91c1c; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0c0a09; --fg:#f5f5f4; --muted:#a8a29e; --line:#292524; --card:#1c1917; --accent:#60a5fa; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171; } }
+* { box-sizing: border-box; } body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; }
+a { color:var(--accent); } h1 { font-size:1.6rem; margin:.2em 0 .5em; } h2 { font-size:1.1rem; }
+nav.top { display:flex; gap:1rem; padding:.7rem 1.2rem; border-bottom:1px solid var(--line); flex-wrap:wrap; align-items:center; position:sticky; top:0; background:var(--bg); }
+nav.top a { text-decoration:none; color:var(--muted); } nav.top a:hover, nav.top a:focus-visible { color:var(--fg); }
+main { max-width:1180px; margin:0 auto; padding:1.5rem 1.2rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1rem; margin:.7rem 0; }
+.grid { display:grid; gap:1rem; } .cols { grid-template-columns: minmax(0,1.6fr) minmax(0,1fr); } @media (max-width:800px){ .cols { grid-template-columns:1fr; } }
+button, input, textarea { font:inherit; color:inherit; } input, textarea { width:100%; padding:.55rem .7rem; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+button { padding:.5rem .9rem; border:1px solid var(--line); border-radius:8px; background:var(--card); cursor:pointer; } button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; } button:disabled { opacity:.5; cursor:default; }
+.muted { color:var(--muted); } .banner { padding:.5rem .8rem; border:1px dashed var(--warn); color:var(--warn); border-radius:8px; margin:.5rem 0; }
+.err { color:var(--bad); } .badge { display:inline-block; padding:0 .5rem; border-radius:99px; border:1px solid currentColor; font-size:.8rem; }
+.cite { padding:0 .15rem; font-weight:600; } table { border-collapse:collapse; width:100%; } th, td { border:1px solid var(--line); padding:.4rem .6rem; text-align:left; vertical-align:top; }
+.hero { padding:4rem 0 2rem; } .hero h1 { font-size:2.6rem; line-height:1.15; } .row { display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; }
+.bar { height:10px; background:var(--accent); border-radius:5px; } blockquote { margin:.4rem 0; padding-left:.8rem; border-left:3px solid var(--line); color:var(--muted); }

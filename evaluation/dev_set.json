@@ -1,0 +1,50 @@
+{
+  "_comment": "SYNTHETIC dev set written for pipeline testing. Documents are invented fixtures, not real papers or results.",
+  "documents": [
+    {"id": "d1", "title": "Grad-CAM for Chest Radiograph Classification", "pages": [
+      {"page": 1, "text": "Abstract\n\nWe apply Grad-CAM to a DenseNet-121 classifier for chest X-ray diagnosis and study how saliency maps relate to predictions."},
+      {"page": 3, "text": "3 Methodology\n\nGrad-CAM weights the feature maps of the last convolutional layer by pooled gradients to localize regions that drive a CNN prediction on chest X-ray images."},
+      {"page": 5, "text": "4 Results\n\nDenseNet-121 achieved accuracy of 92.4% and AUROC of 0.951 on the ChestXray14 dataset."},
+      {"page": 7, "text": "5 Limitations\n\nThe saliency maps were not validated by radiologists. The maps are low resolution and can miss small lesions."}]},
+    {"id": "d2", "title": "Attention Rollout for Retinal Image Grading", "pages": [
+      {"page": 1, "text": "Abstract\n\nWe study attention rollout for a vision transformer that grades diabetic retinopathy in fundus photographs."},
+      {"page": 4, "text": "4 Results\n\nThe ViT model reached accuracy of 88.1% on the EyePACS dataset. Attention rollout gave coarser maps than occlusion sensitivity."},
+      {"page": 6, "text": "5 Limitations\n\nAll images came from a single center, which limits generalization."}]},
+    {"id": "d3", "title": "Concept Bottleneck Models for Skin Lesion Classification", "pages": [
+      {"page": 2, "text": "3 Methodology\n\nA concept bottleneck model predicts clinically meaningful concepts first, then classifies skin lesions from those concepts, so each prediction is explained by concepts."},
+      {"page": 5, "text": "4 Results\n\nThe ResNet-50 concept model obtained F1 of 0.83 on the ISIC dataset."},
+      {"page": 8, "text": "5 Limitations\n\nConcept annotations are expensive to collect. Future work will study automatic concept discovery."}]},
+    {"id": "d4", "title": "Counterfactual Explanations for Brain Tumor Segmentation", "pages": [
+      {"page": 2, "text": "3 Methodology\n\nWe generate counterfactual explanations for a U-Net that segments brain tumors in MRI by perturbing the input until the segmentation changes."},
+      {"page": 6, "text": "4 Results\n\nThe U-Net reached Dice 0.87 on the BraTS dataset."}]},
+    {"id": "d5", "title": "Federated Averaging for Diabetic Retinopathy Screening", "pages": [
+      {"page": 3, "text": "3 Methodology\n\nFedAvg trains a shared model across hospitals without moving patient images, targeting diabetic retinopathy screening."}]}
+  ],
+  "questions": [
+    {"question": "How does Grad-CAM explain CNN predictions on chest X-rays?", "expected_sources": ["d1"],
+     "expected_answer_points": [["gradient|feature map"]]},
+    {"question": "Which method uses attention rollout for retinal images?", "expected_sources": ["d2"],
+     "expected_answer_points": [["attention rollout|rollout"]]},
+    {"question": "What accuracy did DenseNet achieve on ChestXray14?", "expected_sources": ["d1"],
+     "expected_answer_points": [["92.4"]]},
+    {"question": "How do concept bottleneck models explain skin lesion classification?", "expected_sources": ["d3"],
+     "expected_answer_points": [["concept"]]},
+    {"question": "What explanation method is used for brain tumor segmentation?", "expected_sources": ["d4"],
+     "expected_answer_points": [["counterfactual"]]},
+    {"question": "What is the boiling point of tungsten?", "expected_sources": [], "expected_answer_points": []}
+  ],
+  "claims": [
+    {"claim": "DenseNet-121 achieved accuracy of 92.4% on the ChestXray14 dataset.", "label": "SUPPORTED",
+     "evidence_text": "DenseNet-121 achieved accuracy of 92.4% and AUROC of 0.951 on the ChestXray14 dataset."},
+    {"claim": "DenseNet-121 achieved accuracy of 97.8% on the ChestXray14 dataset.", "label": "CONTRADICTED",
+     "evidence_text": "DenseNet-121 achieved accuracy of 92.4% and AUROC of 0.951 on the ChestXray14 dataset."},
+    {"claim": "The saliency maps were validated by radiologists.", "label": "CONTRADICTED",
+     "evidence_text": "The saliency maps were not validated by radiologists. The maps are low resolution."},
+    {"claim": "The ViT model reached accuracy of 88.1% on the EyePACS dataset.", "label": "SUPPORTED",
+     "evidence_text": "The ViT model reached accuracy of 88.1% on the EyePACS dataset. Attention rollout gave coarser maps."},
+    {"claim": "Quantum annealing improves retinal grading throughput.", "label": "INSUFFICIENT_EVIDENCE",
+     "evidence_text": "The ViT model reached accuracy of 88.1% on the EyePACS dataset."},
+    {"claim": "The concept model was trained with reinforcement learning on pathology slides.", "label": "UNSUPPORTED",
+     "evidence_text": "The ResNet-50 concept model obtained F1 of 0.83 on the ISIC dataset."}
+  ]
+}
