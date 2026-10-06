@@ -1,0 +1,23 @@
+# UNTESTED (no Docker in my sandbox). The backend currently stores state in memory; postgres/redis/neo4j
+# are provisioned for the next milestones but the code does not use them yet.
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    ports: ["8000:8000"]
+    depends_on: [qdrant]
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes: [qdrant_data:/qdrant/storage]
+  postgres:
+    image: postgres:16
+    environment: {POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?set in .env}", POSTGRES_DB: researchmind}
+    volumes: [pg_data:/var/lib/postgresql/data]
+  redis:
+    image: redis:7
+  neo4j:
+    image: neo4j:5
+    environment: {NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:?set in .env}"}
+    volumes: [neo_data:/data]
+volumes: {qdrant_data: {}, pg_data: {}, neo_data: {}}
